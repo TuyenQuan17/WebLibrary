@@ -11,12 +11,6 @@ Database Management Systems Project
 - EntityFramework
 - Html,Css,Js
 
-## Project's Youtube Video
-
-<div>
-  <a href="https://www.youtube.com/watch?v=wTb0ECxaCz0"><img src="GaziLibrary/wwwroot/image/ReadmeImages/ImageOfVideo.PNG" alt=""></a>
-</div>
-
 ## Database Tables
 
 <details>
