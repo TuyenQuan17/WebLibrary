@@ -1,0 +1,32 @@
+﻿@model TypeModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="py-3 text-white" style="background-color: #3a393f ">THỂ LOẠI SÁCH </h1>
+<div class="mx-5">
+    <a href="/Admin/AddType" class="btn btn-success my-4 float-end">Thêm loại mới</a>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>TÊN THỂ LOẠI</th>
+                <th>SỐ SÁCH</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var type in Model.TypeWithBooks)
+            {
+                <tr>
+                    <td>@type.Name</td>
+                    <td>@type.NumberOfBook</td>
+                    <td><a href="/Admin/UpdateType/@type.Id" class="btn btn-warning btn-sm">Biên tập</a></td>
+                    <td><a href="/Admin/DeleteType/@type.Id" class="btn btn-danger btn-sm">Xóa</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,50 @@
+﻿@model MessageModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    Layout = "_UserLayout";
+}
+
+<link href="~/Css/contact1.css" rel="stylesheet" />
+<link href="~/Css/contact-information1.css" rel="stylesheet" />
+
+<h1 class="text-center pt-3" style="color: #3C096C">GIAO TIẾP</h1>
+
+<div class="contact-info">
+    <div class="contact-card">
+        <i class="contact-icon fas fa-envelope"></i>
+        <div class="card-content">
+            <h3>EMAIL</h3>
+            <span>quanngoctuyen2001@gmail.com</span>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <i class="contact-icon fas fa-phone"></i>
+        <div class="card-content">
+            <h3>ĐIỆN THOẠI</h3>
+            <span>0909209500</span>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <i class="contact-icon fas fa-map-marker-alt"></i>
+        <div class="card-content">
+            <h3>ĐỊA ĐIỂM</h3>
+            <span>HCM</span>
+        </div>
+    </div>
+</div>
+
+<hr style="color: #E0AAFF" />
+
+<h1 class="mt-5 text-center" style="color: #3C096C">GỬI TIN NHẮN</h1>
+
+<form class="contact-form pb-5" asp-action="Contact" asp-controller="User" method="post">
+    <input type="text" class="contact-form-text" value="@HttpContextAccessor.HttpContext.Session.GetString("name")" readonly />
+    <input type="text" class="contact-form-text" value="@HttpContextAccessor.HttpContext.Session.GetString("lastname")" readonly />
+    <textarea asp-for="Message.Text" class="contact-form-text" maxlength="500" placeholder="Tin nhắn của bạn (tối đa 500)"></textarea>
+    <span class="form-text text-danger" asp-validation-for="Message.Text"></span>
+    <input type="submit" class="contact-form-btn" value="Gửi" />
+</form>

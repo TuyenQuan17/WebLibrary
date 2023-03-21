@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "_UserLayout";
+}
+
+@{
+    string[] rules = {
+        "Mỗi người dùng chỉ có thể mượn 1 cuốn sách tại một thời điểm từ những cuốn sách trong thư viện.",
+        "Người dùng phải trả lại sách đã mượn trong vòng 15 ngày.",
+        "Người dùng không trả lại sách đã mượn đúng hạn, tư cách thành viên của họ sẽ bị hủy nếu họ không có lý do chính đáng.",
+        "Thực phẩm và đồ uống không được tiêu thụ trong tòa nhà thư viện, phòng đọc và hành lang ngoại trừ nước.",
+        "Bạn không thể nói chuyện trên điện thoại di động bên trong tòa nhà thư viện.",
+        "Không được phép quay phim trong thư viện bằng máy ảnh, máy ảnh, điện thoại di động và các thiết bị tương tự trái phép.",
+        "Người dùng tự chịu trách nhiệm về đồ đạc của mình. Phòng Tư liệu và Thư viện không chịu trách nhiệm về đồ đạc bị mất hoặc bị đánh cắp.",
+        "Không nói to trong phòng đọc và hành lang.",
+        "Mười lăm phút trước khi thư viện đóng cửa, quá trình mượn và trả đã hoàn tất.",
+        "Máy tính trong thư viện chỉ được sử dụng cho mục đích giáo dục và nghiên cứu.",
+        "Trong trường hợp không tuân thủ nội quy thư viện, người dùng có nghĩa vụ xem xét các cảnh báo của nhân viên thư viện.",
+        "Người dùng làm hư hỏng tài nguyên thông tin và đồ đạc của thư viện (máy tính, ghế, bàn, v.v.) sẽ được báo cáo cho Văn phòng Hiệu trưởng để thực hiện hành động pháp lý cần thiết.",
+        "Trong trường hợp tài nguyên thông tin bị lấy ra khỏi thư viện hoặc cố gắng mang ra khỏi thư viện mà không được phép, Văn phòng Hiệu trưởng sẽ được thông báo để thực hiện hành động pháp lý cần thiết đối với người dùng thực hiện hành động này.",
+        "Thành viên có nghĩa vụ thông báo kịp thời cho thư viện về những thay đổi thông tin trong phiếu đăng ký sử dụng thư viện lần đầu"
+    };
+}
+
+
+<div class="accordion accordion-flush py-3" id="accordionFlushExample">
+    <table class="table table-striped table-hover">
+        <tbody>
+            @for (int i = 1; i <= rules.Length; i++)
+            {
+                <tr>
+                    <th scope="row">@i</th>
+                    <td>@rules[i-1]</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

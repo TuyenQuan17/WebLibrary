@@ -1,0 +1,32 @@
+﻿@model PositionModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="py-3 text-white" style="background-color: #3a393f ">VỊ TRÍ NGƯỜI DÙNG</h1>
+<div class="mx-5">
+    <a href="/Admin/AddPosition" class="btn btn-success my-4 float-end">Thêm vị trí mới</a>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>TÊN VỊ TRÍ</th>
+                <th>SỐ NGƯỜI DÙNG</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var position in Model.PositionWithUsers)
+            {
+                <tr>
+                    <td>@position.Name</td>
+                    <td>@position.NumberOfUsers</td>
+                    <td><a href="/Admin/UpdatePosition/@position.Id" class="btn btn-warning btn-sm">Biên tập</a></td>
+                    <td><a href="/Admin/DeletePosition/@position.Id" class="btn btn-danger btn-sm">Xóa</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

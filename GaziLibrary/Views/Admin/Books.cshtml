@@ -1,0 +1,38 @@
+﻿@model BookModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="py-3 text-white" style="background-color: #3a393f ">SÁCH</h1>
+<div class="col-md-6 text-center m-auto">
+</div>
+<div class="mx-5">
+    <a href="/Admin/AddBook" class="btn btn-success my-4 float-end">Thêm sách mới</a>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>TÊN</th>
+                <th>NHÀ VĂN</th>
+                <th>KIỂU</th>
+                <th>SỐ TRANG</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.Books)
+            {
+                <tr>
+                    <td>@book.Name</td>
+                    <td>@book.Author.FirstName @book.Author.LastName</td>
+                    <td>@book.Type.Name</td>
+                    <td>@book.NumberOfPage</td>
+                    <td><a href="/Admin/UpdateBook/@book.Id" class="btn btn-warning btn-sm">Biên tập</a></td>
+                    <td><a href="/Admin/DeleteBook/@book.Id" class="btn btn-danger btn-sm">Xóa</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

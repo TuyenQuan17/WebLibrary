@@ -1,0 +1,35 @@
+﻿@model AuthorModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="py-3 text-white" style="background-color: #3a393f ">TÁC GIẢ</h1>
+<div class="col-md-6 text-center m-auto">
+</div>
+<div class="mx-5 ">
+    <a href="/Admin/AddAuthor" class="btn btn-success my-4 float-end">Thêm tác giả mới</a> 
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>HỌ</th>
+                <th>TÊN</th>
+                <th>SỐ SÁCH</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var author in Model.AuthorWithBooks)
+            {
+                <tr>
+                    <td>@author.FirstName</td>
+                    <td>@author.LastName</td>
+                    <td>@author.NumberOfBook</td>
+                    <td><a href="/Admin/UpdateAuthor/@author.Id" class="btn btn-warning btn-sm">Biên tập</a></td>
+                    <td><a href="/Admin/DeleteAuthor/@author.Id" class="btn btn-danger btn-sm">xóa bỏ</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

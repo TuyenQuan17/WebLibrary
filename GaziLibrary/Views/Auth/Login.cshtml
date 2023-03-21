@@ -1,0 +1,27 @@
+﻿@model UserModel
+
+@{
+    Layout = "_MainLayout";
+}
+
+<link href="~/Css/login.css" rel="stylesheet" />
+
+<div class="center">
+    <h1>ĐĂNG NHẬP</h1>
+    <form method="post" asp-action="Login" asp-controller="Auth">
+        <div class="txt_field">
+            <input asp-for="User.UserName" type="text" required>
+            <span></span>
+            <label asp-for="User.UserName">Tên tài khoản</label>
+        </div>
+        <div class="txt_field">
+            <input asp-for="User.Password" type="password" required>
+            <span></span>
+            <label asp-for="User.Password">Mật khẩu</label>
+        </div>
+        <input type="submit" value="Đăng nhập">
+        <div class="text-center">
+            <a href="/Auth/UserSignup">Đăng Ký</a>
+        </div>
+    </form>
+</div>
